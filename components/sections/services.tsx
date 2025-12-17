@@ -1,75 +1,75 @@
-export function Services() {
+import { Card, CardHeader, CardContent } from '@/components/ui/card'
+
+export default function Services() {
+  const sessionDetails = [
+    'Individual Therapy Sessions',
+    '50-minute sessions focused on your specific needs',
+    'Flexible scheduling for busy professionals',
+    'In-person and virtual options available',
+    'Evidence-based techniques you can apply immediately'
+  ]
+
+  const process = [
+    {
+      step: 'Initial Consultation',
+      description: "We'll discuss your needs and ensure we're a good fit"
+    },
+    {
+      step: 'Personalized Plan',
+      description: "Together, we'll create clear goals for your therapy journey"
+    },
+    {
+      step: 'Regular Sessions',
+      description: 'Weekly or bi-weekly meetings to maintain progress'
+    },
+    {
+      step: 'Progress Review',
+      description: 'Regular check-ins to adjust our approach as needed'
+    }
+  ]
+
   return (
-    <section className="bg-white py-20 lg:py-32">
-      <div className="container px-4 md:px-6">
-        <div className="mx-auto max-w-[800px]">
-          <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl md:text-5xl">
-            Your Journey to Well-being
-          </h2>
-          <div className="mt-12 space-y-12">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold">Individual Therapy Sessions</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <svg className="h-6 w-6 flex-none mt-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>50-minute sessions focused on your specific needs</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="h-6 w-6 flex-none mt-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Flexible scheduling for busy professionals</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="h-6 w-6 flex-none mt-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>In-person and virtual options available</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="h-6 w-6 flex-none mt-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Evidence-based techniques you can apply immediately</span>
-                </li>
+    <section id="services" className="bg-background py-16 md:py-24">
+      <div className="container space-y-12">
+        <h2 className="text-3xl md:text-4xl font-heading text-center">
+          Your Journey to Well-being
+        </h2>
+        
+        <div className="grid md:grid-cols-2 gap-8">
+          <Card>
+            <CardHeader>
+              <h3 className="text-xl font-heading">{sessionDetails[0]}</h3>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <ul className="space-y-2">
+                {sessionDetails.slice(1).map((detail, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>{detail}</span>
+                  </li>
+                ))}
               </ul>
-            </div>
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold">What to Expect</h3>
-              <ol className="space-y-4">
-                <li className="flex items-start gap-4">
-                  <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-primary text-white font-semibold">1</span>
-                  <div>
-                    <h4 className="font-semibold">Initial Consultation</h4>
-                    <p className="text-gray-600">We'll discuss your needs and ensure we're a good fit</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-primary text-white font-semibold">2</span>
-                  <div>
-                    <h4 className="font-semibold">Personalized Plan</h4>
-                    <p className="text-gray-600">Together, we'll create clear goals for your therapy journey</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-primary text-white font-semibold">3</span>
-                  <div>
-                    <h4 className="font-semibold">Regular Sessions</h4>
-                    <p className="text-gray-600">Weekly or bi-weekly meetings to maintain progress</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-primary text-white font-semibold">4</span>
-                  <div>
-                    <h4 className="font-semibold">Progress Review</h4>
-                    <p className="text-gray-600">Regular check-ins to adjust our approach as needed</p>
-                  </div>
-                </li>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <h3 className="text-xl font-heading">What to Expect</h3>
+            </CardHeader>
+            <CardContent>
+              <ol className="relative border-l border-primary/30 space-y-8 pl-8">
+                {process.map((item, index) => (
+                  <li key={index} className="relative">
+                    <div className="absolute -left-[33px] h-6 w-6 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
+                      <span className="text-sm text-primary font-medium">{index + 1}</span>
+                    </div>
+                    <h4 className="font-medium mb-1">{item.step}</h4>
+                    <p className="text-mutedForeground">{item.description}</p>
+                  </li>
+                ))}
               </ol>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

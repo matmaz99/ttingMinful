@@ -1,52 +1,37 @@
+import { Check } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
-export function Booking() {
+export default function Booking() {
+  const benefits = [
+    'Discuss your specific challenges',
+    'Learn more about my approach',
+    'Understand how we'll work together',
+    'Get answers to your questions'
+  ]
+
   return (
-    <section className="bg-white py-20 lg:py-32">
-      <div className="container px-4 md:px-6">
-        <div className="mx-auto max-w-[800px] text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Take the First Step Today
-          </h2>
-          <div className="mt-8 space-y-6">
-            <p className="text-lg text-gray-600">
-              Your journey to emotional well-being begins with a simple conversation.
-            </p>
-            <ul className="inline-block text-left space-y-3">
-              <li className="flex items-center gap-3">
-                <svg className="h-6 w-6 flex-none text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Discuss your specific challenges
-              </li>
-              <li className="flex items-center gap-3">
-                <svg className="h-6 w-6 flex-none text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Learn more about my approach
-              </li>
-              <li className="flex items-center gap-3">
-                <svg className="h-6 w-6 flex-none text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Understand how we'll work together
-              </li>
-              <li className="flex items-center gap-3">
-                <svg className="h-6 w-6 flex-none text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Get answers to your questions
-              </li>
-            </ul>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="font-semibold">
-                Book Your Consultation
-              </Button>
-              <Button size="lg" variant="outline" className="font-semibold">
-                Send me a message
-              </Button>
-            </div>
-          </div>
+    <section id="booking" className="bg-primary text-primaryForeground py-16 md:py-24">
+      <div className="container text-center space-y-8">
+        <h2 className="text-3xl md:text-4xl font-heading">
+          Take the First Step Today
+        </h2>
+        
+        <ul className="max-w-2xl mx-auto grid sm:grid-cols-2 gap-4 text-left">
+          {benefits.map((benefit, index) => (
+            <li key={index} className="flex items-start gap-3">
+              <Check className="h-5 w-5 flex-shrink-0" />
+              <span>{benefit}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="space-y-4">
+          <Button variant="secondary" size="lg">
+            Book Your Consultation
+          </Button>
+          <p className="text-primary-foreground/80">
+            Not ready to book? Send me a message
+          </p>
         </div>
       </div>
     </section>
