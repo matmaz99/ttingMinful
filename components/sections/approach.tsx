@@ -1,72 +1,53 @@
-export function Approach() {
+import { Card, CardTitle } from '@/components/ui/card'
+
+export default function Approach() {
+  const methodologies = [
+    {
+      title: 'Cognitive Behavioral Therapy (CBT)',
+      points: [
+        'Evidence-based techniques that create real change',
+        'Practical tools you can use immediately',
+        'Clear strategies to reshape challenging thought patterns',
+        'Measurable progress you can track'
+      ]
+    },
+    {
+      title: 'Mindfulness Integration',
+      points: [
+        'Present-moment awareness techniques',
+        'Stress reduction through proven practices',
+        'Enhanced emotional regulation skills',
+        'Deep-rooted, sustainable change'
+      ]
+    }
+  ]
+
   return (
-    <section className="bg-white py-20 lg:py-32">
-      <div className="container px-4 md:px-6">
-        <div className="mx-auto max-w-[800px]">
-          <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl md:text-5xl">
-            Where Science Meets Mindfulness
-          </h2>
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold">Cognitive Behavioral Therapy (CBT)</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <svg className="h-6 w-6 flex-none mt-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Evidence-based techniques that create real change</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="h-6 w-6 flex-none mt-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Practical tools you can use immediately</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="h-6 w-6 flex-none mt-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Clear strategies to reshape challenging thought patterns</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="h-6 w-6 flex-none mt-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Measurable progress you can track</span>
-                </li>
+    <section id="approach" className="bg-background py-16 md:py-24">
+      <div className="container space-y-12">
+        <h2 className="text-3xl md:text-4xl font-heading text-center">
+          Where Science Meets Mindfulness
+        </h2>
+        <div className="grid md:grid-cols-2 gap-8">
+          {methodologies.map((method, index) => (
+            <Card key={index} className="p-6 space-y-4">
+              <CardTitle className="text-xl font-heading">
+                {method.title}
+              </CardTitle>
+              <ul className="space-y-2">
+                {method.points.map((point, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-primary">•</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
               </ul>
-            </div>
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold">Mindfulness Integration</h3>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <svg className="h-6 w-6 flex-none mt-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Present-moment awareness techniques</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="h-6 w-6 flex-none mt-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Stress reduction through proven practices</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="h-6 w-6 flex-none mt-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Enhanced emotional regulation skills</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <svg className="h-6 w-6 flex-none mt-1 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                  </svg>
-                  <span>Deep-rooted, sustainable change</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+            </Card>
+          ))}
         </div>
+        <p className="text-center text-lg text-mutedForeground max-w-2xl mx-auto">
+          Together, these approaches create a comprehensive path to healing that addresses both immediate symptoms and long-term well-being.
+        </p>
       </div>
     </section>
   )
