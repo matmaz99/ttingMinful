@@ -1,45 +1,38 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion'
 
-export default function FAQ() {
+export default function FAQSection() {
   const faqs = [
     {
-      question: 'How long does therapy typically last?',
-      answer: 'Each journey is unique. Most clients begin to see meaningful changes within 8-12 sessions, though some prefer ongoing support for sustained growth.'
+      question: 'What is CBT and how does it work?',
+      answer: 'Cognitive Behavioral Therapy (CBT) is a proven approach that helps identify and change negative thought patterns and behaviors. We work together to develop practical strategies for managing challenges and achieving your goals.'
+    },
+    {
+      question: 'How long are the sessions?',
+      answer: 'Individual therapy sessions are 50 minutes long. We meet weekly or bi-weekly, depending on your needs and goals.'
     },
     {
       question: 'Do you accept insurance?',
       answer: 'Yes, I work with several major insurance providers. We can discuss your coverage during our initial consultation.'
     },
     {
-      question: 'What if I'm new to therapy?',
-      answer: 'Many of my clients are first-time therapy seekers. I'll guide you through the process and ensure you feel comfortable every step of the way.'
+      question: 'What if I\'m new to therapy?',
+      answer: 'Many of my clients are first-time therapy seekers. I\'ll guide you through the process and ensure you feel comfortable every step of the way.'
     },
     {
-      question: 'How do I know if CBT with mindfulness is right for me?',
-      answer: 'This approach is particularly effective for anxiety, stress, and depression. Our initial consultation will help determine if it's the best fit for your needs.'
+      question: 'Are online sessions available?',
+      answer: 'Yes, I offer secure video sessions for clients in the Washington, D.C. area. Online therapy provides the same quality of care with added convenience.'
     }
   ]
 
   return (
-    <section id="faq" className="bg-muted py-16 md:py-24">
-      <div className="container max-w-3xl mx-auto space-y-8">
-        <h2 className="text-3xl md:text-4xl font-heading text-center">
-          Common Questions
-        </h2>
+    <section id="faq" className="py-16 bg-white">
+      <div className="container max-w-4xl mx-auto px-4">
+        <h2 className="text-4xl font-display mb-8 text-center">Frequently Asked Questions</h2>
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="text-left text-lg">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-mutedForeground">
-                {faq.answer}
-              </AccordionContent>
+              <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+              <AccordionContent>{faq.answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
