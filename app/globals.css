@@ -19,6 +19,8 @@
   --ring: 200 29% 41%;
 }
 
-body {
-  @apply bg-background text-foreground;
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
 }

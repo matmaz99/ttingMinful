@@ -12,7 +12,10 @@ const config: Config = {
         primary: 'hsl(200 29% 41%)',
         secondary: 'hsl(35 25% 93%)',
         accent: 'hsl(171 37% 84%)',
+        background: 'hsl(0 0% 100%)',
+        foreground: 'hsl(200 29% 15%)',
         muted: 'hsl(200 15% 96%)',
+        'muted-foreground': 'hsl(200 10% 45%)',
       },
       fontFamily: {
         heading: ['Playfair Display', 'serif'],
@@ -22,5 +25,3 @@ const config: Config = {
   },
   plugins: [],
 }
-
-export default config
