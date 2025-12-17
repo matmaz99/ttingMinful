@@ -2,25 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary: 200 29% 41%;
-  --primary-foreground: 200 10% 98%;
-  --secondary: 35 25% 93%;
-  --secondary-foreground: 200 29% 41%;
-  --accent: 171 37% 84%;
-  --accent-foreground: 171 40% 25%;
-  --background: 0 0% 100%;
-  --foreground: 200 29% 15%;
-  --muted: 200 15% 96%;
-  --muted-foreground: 200 10% 45%;
-  --card: 0 0% 100%;
-  --card-foreground: 200 29% 15%;
-  --border: 200 15% 90%;
-  --ring: 200 29% 41%;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 200 29% 15%;
+    --primary: 200 29% 41%;
+    --primary-foreground: 200 10% 98%;
+    --secondary: 35 25% 93%;
+    --secondary-foreground: 200 29% 41%;
+    --accent: 171 37% 84%;
+    --accent-foreground: 171 40% 25%;
+    --muted: 200 15% 96%;
+    --muted-foreground: 200 10% 45%;
+    --border: 200 15% 90%;
+    --ring: 200 29% 41%;
+  }
 }
 
 @layer base {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.container-width {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }

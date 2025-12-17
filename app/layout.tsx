@@ -1,10 +1,11 @@
+import type { Metadata } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-body' })
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-heading' })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'CBT & Mindfulness Therapy | Sarah Johnson, Licensed Therapist',
   description: 'Experience the powerful combination of CBT and mindfulness therapy. Book your consultation to begin your journey toward lasting peace and emotional well-being.',
 }
@@ -16,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} font-body`}>{children}</body>
+      <body className={`${inter.variable} ${playfair.variable} font-sans`}>{children}</body>
     </html>
   )
 }
